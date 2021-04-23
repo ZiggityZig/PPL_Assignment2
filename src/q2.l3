@@ -39,6 +39,15 @@
                                
 (define compose-n
   (lambda( f n)
-        @TODO
+        (if (= 1 n)
+          f
+        (compose-n-helper f(compose-n f (- 1 n))) 
+        )
   )
+)
+
+(define compose-n-helper
+   (lambda (f g)
+      (lambda (h) (g (f h)))
+   )
 )
