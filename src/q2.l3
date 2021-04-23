@@ -12,7 +12,7 @@
 
 
 (define duplicate-items
-   (lambda(lst dup-count)
+   (lambda (lst dup-count)
     (if (empty? lst)
       '()
       (append(duplicateDigit (car lst) (car dup-count)) (duplicate-items (cdr lst) (append (cdr dup-count) (cons(car dup-count) '() )) ))
@@ -20,28 +20,30 @@
    )
 )
 
+
+
 (define duplicateDigit
   (lambda(digit numOfApparnces)
   (if (= numOfApparnces 0)
       '()
-  (append(cons digit (duplicateDigit digit (- numOfApparnces 1)))))
-  )
-)
+  (append (cons digit '() ) (duplicateDigit digit (- numOfApparnces 1) ))))
+ )
+
 
 
 (define payment
   (lambda (n coins-lst)
-    (if(< n 0)
+    if(< n 0)
       0
-    (if(= n 0)
-      1
-      (+ (payment((n - (car list)) (cdr lst))) (payment n (cdr lst)))))))
+      (payment(n - (car list) cdr lst)
+  )
+)
                                
 (define compose-n
   (lambda( f n)
         (if (= 1 n)
           f
-        (compose-n-helper f(compose-n f (- 1 n))) 
+        (compose-n-helper f(compose-n f (- n 1))) 
         )
   )
 )
