@@ -31,11 +31,12 @@
 
 (define payment
   (lambda (n coins-lst)
-    (if(< n 0)
-      0
-    (if(= n 0)
-      1
-      (+ (payment((n - (car list)) (cdr lst))) (payment n (cdr lst)))))))
+    (if(= n 0) 1
+    (if(< n 0) 0
+    (if (empty? coins-lst) 0
+    (+ (payment(- n (car coins-lst)) (cdr coins-lst)) (payment n (cdr coins-lst))))))
+    )
+  )
                                
 (define compose-n
   (lambda( f n)
