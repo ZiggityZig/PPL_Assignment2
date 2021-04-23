@@ -31,7 +31,9 @@
 
 (define payment
   (lambda (n coins-lst)
-        
+    if(< n 0)
+      0
+      (payment(n - (car list) cdr lst)
   )
 )
                                
