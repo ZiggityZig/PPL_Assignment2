@@ -13,8 +13,19 @@
 
 (define duplicate-items
    (lambda(lst dup-count)
-      @TODO
+    (if (empty? lst)
+      '()
+      (append(duplicateDigit (car lst) (car dup-count)) (duplicate-items (cdr lst) (append (cdr dup-count) (cons(car dup-count) '() )) ))
+     )
    )
+)
+
+(define duplicateDigit
+  (lambda(digit numOfApparnces)
+  (if (= numOfApparnces 0)
+      '()
+  (append(cons digit (duplicateDigit digit (- numOfApparnces 1)))))
+  )
 )
 
 
