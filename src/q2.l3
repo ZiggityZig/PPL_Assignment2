@@ -1,14 +1,15 @@
 (define append 
   (lambda(lst1 lst2)
-    (if (empty? lst1)
-        lst2
-        (cons (car lst1) (append (cdr lst1) lst2)))))
+    (if (empty? lst1) 
+      lst2
+      (cons (car lst1) (append (cdr lst1) lst2)))))
 
 (define reverse 
   (lambda (lst)
-        (empty? lst ? ('()) (append (reverse (cdr lst)) (cons (car lst)) '() ))  
-  )
-)
+    (if (empty? lst)
+        '()
+        (append (reverse (cdr lst)) (list (car lst))))))
+
 
 (define duplicate-items
    (lambda(lst dup-count)
@@ -19,7 +20,7 @@
 
 (define payment
   (lambda (n coins-lst)
-        @TODO
+        
   )
 )
                                
